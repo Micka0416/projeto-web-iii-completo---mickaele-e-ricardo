@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Usuários</title>
+
+    <%- include("../partials/cabecalho.ejs")%>
+    <%-include("../partials/menu.ejs")%>
+
+    <link rel="stylesheet" href="/css/biblioteca.css">
+</head>
+<body class="biblioteca">
+    <div class="container">
+    <% if (status == 1) { %>
+        <div style="background-color: rgb(192, 190, 250);">Usuario cadastrado</div>
+        
+    <%} %>
+    <% if (status == 2) { %>
+        <div style="background-color: rgb(191, 61, 72);">Usuario removido</div>
+        
+    <%} %>
+    <% if (status == 3) { %>
+        <div style="background-color: rgb(240, 185, 85);">Usuario atualizado</div>
+        
+    <%} %>
+    
+    <br>
+    <h3>Usuários </h3>
+    <div>
+        
+        <table class="table table-striped">
+            <th>ID</th>
+            <th>Nome</th>
+            <th>Email</th>
+            <th>Senha</th>
+            <th>Detalhes</th>
+            <th>Deletar</th>
+            <th>Atualizar</th>
+        
+    <% for (const usuario of usuarios){ %>
+        <tr>
+            <td> 
+                <%= usuario.id %> 
+            </td>    
+        <td> 
+            <%= usuario.nome %> 
+        </td>
+        <td>
+            <%= usuario.email %>
+        </td>
+        <td> 
+            <%= usuario.senha %> 
+        </td>
+        <td>    
+            <a href="/usuarios/<%= usuario.id %>" class="btn btn-warning">Detalhar</a>
+         </td>
+
+        <td>
+            
+            <a href="/usuarios/deletar/<%= usuario.id %>" class="btn btn-outline-danger"
+                onclick="return confirm('Quer realmente remover?')">Remova</a> 
+        </td>
+
+        <td>    
+            <a href="/usuarios/atualizar/<%= usuario.id %>" class="btn btn-success">Atualizar</a>
+         </td>
+        
+    <br>
+
+        </tr>
+    <%} %>
+    </table>
+    
+    <a href="/">
+        <div class="d-grid gap-2">
+            <button class="btn btn-dark" type="button">Índice</button>
+    </a>
+        </div>
+    
+    </body>
+
+<%- include("../partials/rodape.ejs")%>
+</html>
