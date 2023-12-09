@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalhes do livro</title>
+
+    <%- include("../partials/cabecalho.ejs")%>
+    <%-include("../partials/menu.ejs")%>
+
+    <link rel="stylesheet" href="/css/biblioteca.css">
+</head>
+<body class="biblioteca">
+
+    <div>
+    <b>Livro com o ID Específico: <%= livro.id %></b>
+    </div>
+    <div> 
+        <b>Titulo:   <%= livro.titulo %></b> 
+    </div>
+    <div>
+        <b>Autor: <%= livro.autor %></b>
+    </div>
+    <div>
+        <b>Isbn: <%= livro.isbn%></b> 
+    </div>
+
+    <a href="/livros">
+        <div class="d-grid gap-2">
+            <button class="btn btn-dark" type="button">Voltar</button>
+    </a>
+
+</body>
+<%- include("../partials/rodape.ejs")%>
+</html>
