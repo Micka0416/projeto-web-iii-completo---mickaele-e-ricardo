@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastramento de livro</title>
+
+    <%- include("../partials/cabecalho.ejs")%>
+    <%-include("../partials/menu.ejs")%>
+
+    <link rel="stylesheet" href="/css/biblioteca.css">
+</head>
+<body class="biblioteca">
+    <div class="container">
+    <form action="/livros" method="post">
+
+      <input type="hidden" name="_id" value="<%= livro._id %>">
+
+        <label for="id" >Digite o id</label>
+        <div class="input-group mb-3" >
+            <input <% if(livro.id != undefined){%> readonly <% } %> type="id" required class="form-control" placeholder="Escreva" aria-label="Username"
+            name="id" id="id" value="<%= livro.id %>">
+          </div>
+
+          
+        <label for="titulo" >Digite o titulo</label>
+        <div class="input-group mb-3">
+            <input required type="text" class="form-control" placeholder="Escreva" aria-label="Username"
+            name="titulo" id="titulo" value="<%= livro.titulo %>">
+          </div>
+
+        <label for="autor">Digite o autor</label>       
+        <div class="input-group mb-3">
+            <input type="text" class="form-control" placeholder="Escreva" aria-label="Username"
+            name="autor" id="autor" value="<%= livro.autor %>">
+          </div>
+
+          <label for="cpf">Digite o isbn</label>
+          <div class="input-group mb-3">
+            <input type="number" class="form-control" placeholder="Escreva" aria-label="text"
+              name="isbn" id="isbn" value="<%= livro.isbn %>">
+          </div>
+          
+          <div>
+            <input class="btn btn-secondary" type="submit" value="Atualizar">
+          </div>
+    </form>
+    
+    <a href="/" class="btn btn-dark">Índice</a>
+
+</div>
+</body>
+<%-include("../partials/rodape.ejs")%>
+</html>
