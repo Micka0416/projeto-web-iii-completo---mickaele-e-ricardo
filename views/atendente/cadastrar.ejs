@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastramento de atendentes</title>
+
+    <%- include("../partials/cabecalho.ejs")%>
+    <%- include("../partials/menu.ejs")%>
+
+    <link rel="stylesheet" href="/css/biblioteca.css">
+</head>
+<body class="biblioteca">
+    <div class="container">
+        <form action="/atendentes" method="post">
+            <input type="hidden" name="_id" value="<%= atendente && atendente._id %>">
+            <label for="id">Id</label>
+            <div class="input-group mb-3">
+                <input <% if(atendente && atendente.id !== undefined){%> readonly<% } %> value="<%= atendente && atendente.id %>" required type="text" class="form-control" placeholder="Escreva" aria-label="Username" name="id" id="id">
+            </div>
+
+            <label for="cpf">Cpf</label>
+            <div class="input-group mb-3">
+                <input required type="number" class="form-control" placeholder="Escreva" aria-label="Username" name="cpf" id="cpf" value="<%= atendente && atendente.cpf %>">
+            </div>
+
+            <label for="nome">Nome</label>
+            <div class="input-group mb-3">
+                <input type="text" class="form-control" placeholder="Escreva" aria-label="Username" name="nome" id="nome" value="<%= atendente && atendente.nome %>">
+            </div>
+
+            <label for="email">Email</label>
+            <div class="input-group mb-3">
+                <input type="text" class="form-control" placeholder="Escreva" aria-label="text" name="email" id="email" value="<%= atendente && atendente.email %>">
+            </div>
+
+            <div>
+                <input class="btn btn-secondary" type="submit" value="Atualizar">
+            </div>
+        </form>
+
+        <a href="/" >Índice</a>
+    </div>
+</body>
+<%- include("../partials/rodape.ejs")%>
+</html>
