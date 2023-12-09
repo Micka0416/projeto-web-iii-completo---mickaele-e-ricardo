@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Index</title>
+
+    <%- include("partials/cabecalho.ejs")%>
+    <%-include("partials/menu.ejs")%>
+    
+    <link rel="stylesheet" href="/css/biblioteca.css">
+    <link rel="stylesheet" href="/css/back.css">
+
+</head>
+<body class="back">
+
+    <div class="container" position="bottom center">
+            <a href="/livros">
+                <input type="button" class="button" value="Lista de Livros">
+            </a>
+          </div>
+          <div class="container" position="bottom center">
+          <div class="back">
+            <a href="/atendentes">
+                <input type="button" class="button" value="Lista de Atendentes">
+            </a>
+          </div>
+
+          <div class="back">
+            <a href="/usuarios">
+                <input type="button" class="button" value="Lista de Usuários">
+            </a>
+          </div>
+
+          <div class="container" position="bottom center">
+          <div class="w-100"></div>
+          <div class="back">
+            
+            <a href="/livros/cadastrar">
+                <input type="button" class="button" value="Cadastrar Livro">
+            </a>
+          </div>
+          <div class="back">
+            <a href="/atendentes/cadastrar">
+            <input type="button" class="button" value="Cadastrar Atendente">
+        </a></div>
+
+        <div class="col">
+          <a href="/usuarios/cadastrar">
+          <input type="button" class="button" value="Cadastrar Usuário">
+      </a></div>
+
+        </div>
+      </div>
+
+</body>    
+    <%- include("partials/rodape.ejs")%>
+</html>
