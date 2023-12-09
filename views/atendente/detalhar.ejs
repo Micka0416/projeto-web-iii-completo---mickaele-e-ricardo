@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalhes do atendente</title>
+
+    <%- include("../partials/cabecalho.ejs")%>
+    <%-include("../partials/menu.ejs")%>
+
+    <link rel="stylesheet" href="/css/biblioteca.css">
+</head>
+<body class="biblioteca">
+
+    <div>
+    <b>Imóvel com o ID Específico: <%= atendente.id %></b>
+    </div>
+    <div> 
+        <b>Cpf:   <%= atendente.cpf %></b> 
+    </div>
+    <div>
+        <b>Nome: <%= atendente.nome %></b>
+    </div>
+    <div>
+        <b>Email: <%= atendente.email%></b> 
+    </div>
+
+    <a href="/atendentes">
+        <div class="d-grid gap-2">
+            <button class="btn btn-dark" type="button">Voltar</button>
+    </a>
+
+</body>
+<%- include("../partials/rodape.ejs")%>
+</html>
