@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastramento do Usuário</title>
+
+    <%- include("../partials/cabecalho.ejs")%>
+    <%-include("../partials/menu.ejs")%>
+
+    <link rel="stylesheet" href="/css/biblioteca.css">
+</head>
+<body class="biblioteca">
+    <div class="container">
+      <% if (status == 1) { %>
+        <div style="background-color: rgb(233, 112, 122);">Email já existe</div>
+        
+    <%} %>
+    <form action="/usuarios" method="post">
+
+      <input type="hidden" name="_id" value="<%= usuario._id %>">
+
+        <label for="id" >Digite o id</label>
+        <div class="input-group mb-3" >
+            <input <% if(usuario.id != undefined){%> readonly <% } %> type="text" required class="form-control" placeholder="Escreva" aria-label="Username"
+            name="id" id="id" value="<%= usuario.id %>">
+          </div>
+
+          
+        <label for="nome" >Digite o nome</label>
+        <div class="input-group mb-3">
+            <input required type="text" class="form-control" placeholder="Escreva" aria-label="Username"
+            name="nome" id="nome" value="<%= usuario.nome %>">
+          </div>
+            
+        <label for="email" >Digite o email</label>
+        <div class="input-group mb-3">
+            <input required type="email" class="form-control" placeholder="Escreva" aria-label="Username"
+            name="email" id="email" value="<%= usuario.email %>"
+            >
+          </div>
+
+        <label for="senha">Digite a senha</label>       
+        <div class="input-group mb-3">
+            <input type="password" class="form-control" placeholder="Escreva" aria-label="Username"
+            name="senha" id="senha" value="<%= usuario.senha %>">
+            <span class="lnr lnr-eye"></span>
+          </div>
+
+          <div>
+            <input class="btn btn-secondary" type="submit" value="Atualizar">
+          </div>
+    </form>
+    
+    <a href="/" class="btn btn-dark">Índice</a>
+
+</html>
